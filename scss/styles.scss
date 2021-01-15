@@ -7,12 +7,6 @@ $darkGrayishBlue: hsl(227, 10%, 46%);
 $darkGray: hsl(0, 0%, 59%);
 
 $bp_small: 375px;
-
-@mixin mobile {
-  @media screen and (max-width: $bp_small) {
-    @content;
-  }
-}
 /* End Variables and Mixins */
 
 html {
@@ -22,9 +16,86 @@ html {
 }
 
 .full-wrap {
+  align-items: center;
   background: url("../images/bg-pattern-top.svg") no-repeat -60% 220%,
     url("../images/bg-pattern-bottom.svg") no-repeat 145% -200%;
   background-color: $darkCyan;
-  width: 100vw;
+  display: flex;
   height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  .card {
+    background: white;
+    border-radius: 16px;
+    height: 375px;
+    width: 350px;
+    &--top {
+      background: url("../images/bg-pattern-card.svg") no-repeat;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 285px;
+      width: 100%;
+      .avatar {
+        margin-top: 65px;
+        img {
+          border-radius: 50%;
+          border: 5px solid white;
+        }
+      }
+      .user-info {
+        margin-top: 20px;
+        .name {
+          color: $veryDarkDesatBlue;
+          font-weight: 700;
+        }
+        .age {
+          color: $darkGrayishBlue;
+          margin-left: 5px;
+        }
+      }
+      .location {
+        color: $darkGrayishBlue;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+    }
+    &--bottom {
+      align-items: center;
+      display: flex;
+      height: 90px;
+      justify-content: space-around;
+      padding: 0 30px;
+      position: relative;
+      .divider {
+        background: $darkGray;
+        height: 1px;
+        left: 0;
+        opacity: 0.2;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      .stat {
+        width: 55px;
+        text-align: center;
+        .value {
+          font-weight: 700;
+        }
+        .key {
+          color: $darkGrayishBlue;
+          font-size: 10px;
+          letter-spacing: 1px;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $bp_small) {
+    background: url("../images/bg-pattern-top.svg") no-repeat 120% 200%,
+      url("../images/bg-pattern-bottom.svg") no-repeat -20% -100%;
+    background-color: $darkCyan;
+  }
 }
