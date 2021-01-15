@@ -137,4 +137,11 @@ html {
   font-weight: 400;
 }
 
+.full-wrap {
+  background: url("../images/bg-pattern-top.svg") no-repeat -60% 220%, url("../images/bg-pattern-bottom.svg") no-repeat 145% -200%;
+  background-color: #19a2ae;
+  width: 100vw;
+  height: 100vh;
+}
+
 /*# sourceMappingURL=styles.css.map */
