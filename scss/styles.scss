@@ -1,0 +1,22 @@
+@import "reset";
+
+/* Variables and Mixins */
+$darkCyan: hsl(185, 75%, 39%);
+$veryDarkDesatBlue: hsl(229, 23%, 23%);
+$darkGrayishBlue: hsl(227, 10%, 46%);
+$darkGray: hsl(0, 0%, 59%);
+
+$bp_small: 375px;
+
+@mixin mobile {
+  @media screen and (max-width: $bp_small) {
+    @content;
+  }
+}
+/* End Variables and Mixins */
+
+html {
+  font-size: 18px;
+  font-family: "Kumbh Sans";
+  font-weight: 400;
+}
